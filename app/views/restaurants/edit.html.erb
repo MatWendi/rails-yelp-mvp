@@ -1,0 +1,11 @@
+<h1>Edit <%= @restaurant.name %> informations</h1>
+
+
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name%>
+  <%= f.input :category%>
+  <%= f.input :address%>
+  <%= f.input :phone_number%>
+  <%= f.submit "Edit this kebab", class: "btn btn-primary"%>
+<% end %>
+

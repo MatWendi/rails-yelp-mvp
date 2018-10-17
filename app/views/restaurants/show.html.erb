@@ -1,0 +1,22 @@
+
+<h1> <%= @restaurant.name %> </h1>
+<h2> <%= @restaurant.category.capitalize %> Restaurant </h2>
+
+<ul class="list-inline">
+
+    <li> <i class="fas fa-phone"> </i> <%= @restaurant.phone_number  %></li>
+
+    <li> <i class="fas fa-map-signs"></i> <%= @restaurant.address  %> </li>
+</ul>
+
+<br>
+
+<ul>
+  <% @reviews.each do |review| %>
+    <li> <%= review.rating%>/5 - <%= review.content%> </li>
+  <% end %>
+</ul>
+
+<%= link_to new_restaurant_review_path(@restaurant) do %>
+    <button class="btn btn-success"> Add a review </button>
+<% end %>

@@ -1,0 +1,26 @@
+<div class="container">
+  <h1> Restaurant List </h1>
+
+  <ul>
+    <% @restaurants.each do |restaurant| %>
+      <li>
+        <h4>  <%= link_to restaurant.name, restaurant_path(restaurant.id)  %>
+        </h4>
+        <p> This restaurants serves <%= restaurant.category.capitalize %> food
+        <%= link_to edit_restaurant_path(restaurant.id) do %>
+           <i class="fas fa-edit"></i>
+        <% end %>
+
+        <%= link_to restaurant_path(restaurant.id), method: :delete, data:{confirm: "Are you sure?"} do %>
+           <i class="fas fa-trash-alt"></i>
+        <% end %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+
+  <%= link_to new_restaurant_path do %>
+    <button class="btn btn-success"> Add a delicious kebab </button>
+  <% end %>
+</div>
+
